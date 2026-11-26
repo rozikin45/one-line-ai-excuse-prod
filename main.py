@@ -28,6 +28,8 @@ LINE = (
 
 
 def main() -> None:
+    # Competition gate: entry must be 1-180 characters, one line.
+    assert 1 <= len(LINE) <= 180, f"LINE is {len(LINE)} chars, must be 1-180"
     output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
     path = os.path.join(output_dir, "entry.txt")
